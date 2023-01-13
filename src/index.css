@@ -44,6 +44,7 @@ code {
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-template-rows: repeat(auto-fill, 300px);
+  grid-auto-rows: 300px;
   gap: 1rem;
   justify-content: center;
   align-items: stretch;
@@ -88,6 +89,7 @@ code {
   font-weight: 500;
 }
 .animeCard-info {
+  position: relative;
   width: 90%;
   min-height: 80px;
   padding: 5%;
@@ -96,12 +98,13 @@ code {
   justify-content: space-evenly;
   align-items: flex-start;
   opacity: 0;
+  z-index: 10;
 }
 
 .animeCard:active {
   max-height: none;
-  z-index: 10;
-  animation: card-popUp 0.2s forwards ease-in-out;
+  z-index: 100;
+  animation: card-popUp 0.2s forwards ease-out;
 }
 .animeCard:active .animeCard-info {
   opacity: 1;
